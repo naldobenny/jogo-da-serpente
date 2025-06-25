@@ -55,4 +55,26 @@ function mudaDirecao(event){
     } else if(tecla == 'ArrowRight' && direcao !=='ESQUERDA'){
         direcao = 'DIREITA';
     }
+    function moverCobra() {
+        const cabeca = { ...cobra{0}};
+
+        switch (direcao) {
+            case 'CIMA' :
+                cabeca.y--;
+                break;
+           case 'BAIXO':
+            cabeca.y++;
+           case 'ESQUERDA':
+            caebca.x--;
+            break;
+    
+
+        }
+
+        if (verificarColisao(cabeca)) {
+            clearInterval(intervalo);
+            alert(`Game Over! Pontos: ${pontos}`);
+            return;
+        }
+    }
 } 
